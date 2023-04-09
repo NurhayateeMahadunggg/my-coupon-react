@@ -1,24 +1,31 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import Popup from './Pouup';
 
 function App() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  let popup = null;
+  if (isPopupOpen) {
+    popup = <Popup onPopupClose={() => setIsPopupOpen(false)} />;
+  }    
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className='app-section'>
+      <div className='app-container'>
+        <h1>เก็บโค้ดส่วนลดไม่ทัน</h1>
+        <button onClick={() => setIsPopupOpen(true)}>เปิดป๊อปอัพ</button>
+        <p>cute</p><p>cute</p><p>cute</p><p>cute</p><p>cute</p><p>cute</p>
+        <p>cute</p><p>cute</p><p>cute</p><p>cute</p><p>cute</p><p>cute</p>
+        <p>cute</p><p>cute</p><p>cute</p><p>cute</p><p>cute</p><p>cute</p>
+        <p>cute</p><p>cute</p><p>cute</p><p>cute</p><p>cute</p><p>cute</p>
+        <p>cute</p><p>cute</p><p>cute</p><p>cute</p><p>cute</p><p>cute</p>
+        <p>cute</p><p>cute</p><p>cute</p><p>cute</p><p>cute</p><p>cute</p>
+        <p>cute</p><p>cute</p><p>cute</p><p>cute</p><p>cute</p><p>cute</p>
+        <p>cute</p><p>cute</p><p>cute</p><p>cute</p><p>cute</p><p>cute</p>
+      </div>
+      {popup}
+    </section>
   );
 }
 
